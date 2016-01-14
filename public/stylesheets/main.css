@@ -1,0 +1,159 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  background-color: #f2f2f2;
+}
+ul.bookmarksList{
+	
+	list-style: none;
+}
+
+ul.bookmarksList li {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+}
+
+ul.bookmarksList li > a {
+  margin-right: 10px;
+}
+
+.icon-trash {
+  color: #c6c6c6;
+  cursor: pointer;
+}
+
+.icon-trash:hover {
+  color: #666;
+}
+
+.over {
+  overflow: hidden;
+}
+
+.bookmarksInner {
+  margin-top:5px;
+}
+.bookmarksList li span button {
+    margin-right: 15px;
+}
+.bookmarksList li span span:nth-of-type(1) {
+    margin-right: 0;
+}
+.secondLevel > a {
+    margin-right: 0 !important;
+}
+.bookmarksInner li button {
+    margin-right: 15px;
+}
+.bookmarksInner li button:nth-of-type(1) {
+    margin-right: 10px;
+}
+.headerContainer {
+  margin-bottom: 30px;
+}
+.padResetLeft {
+  padding-left: 0;
+}
+.padResetRight {
+  padding-right: 0;
+}
+.jumbotron {
+  background-color: #f2f2f2;
+}
+.bmdropdown .iconDrop{
+  transition: all 0.32s ease-in-out;
+}
+.bmdropdown .toggled .iconDrop{
+  transform: rotate(90deg);
+  transition: all 0.32s ease-in-out;
+}
+.actionsPane {
+    color: #555;
+    float: right;
+    margin-right: 15px;
+}
+.actionsPane i:before {
+    font-size: 13px;
+}
+.addForm {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 2px #ccc;
+    margin: 0 auto;
+    padding: 20px;
+    width: 350px;
+}
+.addForm .input-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.help-block {
+    clear: left;
+    color: red;
+    float: left;
+    font-size: 13px !important;
+    padding-left: 15px;
+    padding-top: 5px;
+    margin-bottom: 0 !important;
+}
+.buttonHolder {
+  margin: 0 auto;
+  width: 155px;
+}
+.buttonHolder button:first-child{
+  margin-right: 10px;
+}
+.addForm h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size:20px;
+  color: #555;
+}
+.searchBlock .input-group {
+    float: left;
+    position: relative;
+    width: 60%;
+}
+.searchBlock input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+.searchBlock .input-group-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.searchBlock .input-group-btn button{    
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+.topLevelAnc {
+  font-size: 16px;
+}
+.secondLevelAnc {
+    padding-left: 10px;
+}
+.cp {
+  cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+

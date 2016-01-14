@@ -1,0 +1,41 @@
+<div class="row headerContainer">
+  <div class="col-lg-6 padResetLeft searchBlock">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" ng-click="searchBookmarks()" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" ng-model="searchText" placeholder="Search Bookmarks">
+    </div>
+  </div>
+  <div class="col-lg-6 padResetRight">
+    <a class="btn btn-primary pull-right" ui-sref="addbookmark">Add Bookmark</a>
+  </div>
+</div>
+  <div class="row" ng-if="dataLoadingCompleted">
+  <div ng-if="!bookmarksList.length">
+    No records to display
+  </div>
+	<ul class="bookmarksList list-group">
+		<li ng-class="folders.foldername ? 'bmdropdown':''" class="list-group-item secondLevel " ng-repeat="folders in bookmarksList | orderBy: 'foldername'" >
+      <a  id="{{'folder'+$index}}" ng-if="folders.foldername" ng-click="toggle($index)" class="list-group-item list-group-item-warning topLevelAnc"><span class="glyphicon glyphicon-folder-open text-justify toggled"> {{folders.foldername}}</span><i class="glyphicon glyphicon-chevron-right pull-right iconDrop"></i></a>
+      <ul  ng-if = "folders.foldername" class="bookmarksInner hide">
+        <li class="list-group-item over" ng-repeat="bookmark in folders.children | orderBy: 'foldername'" >
+         <a class="glyphicon glyphicon-link secondLevelAnc" ng-href="{{bookmark.url}}" > {{bookmark.name}}</a> 
+         <span class="actionsPane cp" ng-click="deleteBookmark(bookmark._id)" data-toggle="tooltip" data-placement="top" title="Delete"><i class="glyphicon glyphicon-trash"></i></span>
+         <span class="actionsPane cp" ui-sref="editbookmark({bookmarkId:bookmark._id})" data-toggle="tooltip" data-placement="top" title="Edit"><i class="glyphicon glyphicon-pencil"></i></span>
+         
+       </li>
+      </ul>
+      <span class="list-group-item over" ng-repeat="bookmark in folders.children | orderBy: 'foldername'" ng-if = "!folders.foldername">
+        <a class="glyphicon glyphicon-link " ng-href="{{bookmark.url}}" > {{bookmark.name}}</a> 
+         <!--span class="label secondary">{{bookmark.folder}}</span-->
+         <span class="actionsPane cp" ng-click="deleteBookmark(bookmark._id)" title="Delete" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-trash"></i></span>
+         <span class="actionsPane cp" ui-sref="editbookmark({bookmarkId:bookmark._id})" title="Edit" data-toggle="tooltip" data-placement="top"><i class="glyphicon glyphicon-pencil"></i></span>
+         
+      </span>
+		</li>
+	</ul>
+ </div>
+ <div class="row" ng-if="!dataLoadingCompleted">
+    Loading..
+ </div>
