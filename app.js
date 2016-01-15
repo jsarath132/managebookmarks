@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/bookmarks');
+mongoose.connect('mongodb://sarath:1234567890@ds049598.mongolab.com:49598/bookmarksapp');
 require('./models/bookmarksmodel');
 
 
