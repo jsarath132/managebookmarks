@@ -24,6 +24,7 @@ var bookmarksController = function($scope, bookmarksFactory, $state, $stateParam
 		}
 	};
 	$scope.cancelSave = function() {
+		$scope.requiredField = '';
 		$state.go('home');
 	};
 	if($state.$current.name === 'editbookmark') {

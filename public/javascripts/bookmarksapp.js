@@ -1,11 +1,14 @@
 'use strict';
 
-var app = angular.module('bookmarks',['ui.router']);
+var app = angular.module('bookmarks',['ngRoute','ui.router']);
 app.controller('bookmarkscontroller', bookmarksController);
 app.controller('bookmarksListController', bookmarksListController);
 app.factory('bookmarksFactory', bookmarksFactory);
+app.directive('ngEnter', onEnter);
 
-app.config(function ($stateProvider,$urlRouterProvider) {
+app.config(function ($locationProvider, $stateProvider,$urlRouterProvider) {
+	
+	
 	$urlRouterProvider.otherwise('/');
 	$stateProvider.state('home',{
 		url: '/',
@@ -28,5 +31,6 @@ app.config(function ($stateProvider,$urlRouterProvider) {
 		templateUrl: 'views/editfolder.html',
 		controller: 'controllers/bookmarkscontroller'
 	});
+	$locationProvider.html5Mode(true);
 });
 

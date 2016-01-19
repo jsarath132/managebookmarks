@@ -27,6 +27,7 @@
         <script src="/javascripts/lib/angular.min.js"></script>
 		<script src="/javascripts/lib/angular-route.min.js"></script>
 		<script src="/javascripts/lib/angular-ui-router.js"></script>
+        <base href="/" />
     </head>
     <body ng-app="bookmarks">
     	<div class="navbar navbar-fixed-top navbar-inverse ">
@@ -38,13 +39,16 @@
             </div>
     	</div>
 
-	
+	<div class="loader" ng-if="!dataLoadingCompleted">
+    </div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 	<script src="/javascripts/lib/bootstrap.min.js"></script>
 	<script src="/javascripts/controllers/bookmarksController.js"></script>
 	<script src="/javascripts/controllers/bookmarksListController.js"></script>
     <script src="/javascripts/factories/bookmarksFactory.js"></script>
+    <script src="/javascripts/directives/onEnter.js"></script>
 	<script src="/javascripts/bookmarksapp.js"></script>
+
 </body>
 </html>
